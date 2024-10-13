@@ -1,7 +1,7 @@
 # Snake_CPP_BrickGame
 Educational project - implementation of Tetris (C) and Snake (CPP) with console and QT versions 
 
-Clone this repo and run 'make'  
+Clone this repo and run `make`  
 
 Needed - QT version 6.2.4 min  
 
