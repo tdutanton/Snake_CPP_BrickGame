@@ -5,6 +5,11 @@ Clone this repo and run `make`
 
 Needed - QT version 6.2.4 min  
 
+Other target with `make ...`:  
+- `dvi` - make program documentation (see index.html in "html"-folder);
+- `dist`- make distibution (.tgz archive);
+- `tests` - run tests for custom functions.
+
 # Tetris
 
 ![Screenshot](./readme_imgs/tetris_qt.jpg)  
