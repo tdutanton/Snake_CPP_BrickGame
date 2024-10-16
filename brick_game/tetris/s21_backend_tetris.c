@@ -107,11 +107,11 @@ full_game_info_t* update_ptr_full(void) {
  * the structure with all parameters
  */
 GameInfo_t updateCurrentState(void) {
-  GameInfo_t info = {0};
+  static GameInfo_t info = {0};
   FULL_INFO;
-  info.field = init_empty_area(ROWS, COLS);
+  if (!info.field) info.field = init_empty_area(ROWS, COLS);
   copy_area(full_info->info.field, info.field, ROWS, COLS);
-  info.next = init_empty_area(MAX_FIG_ROWS, MAX_FIG_COLS);
+  if (!info.next) info.next = init_empty_area(MAX_FIG_ROWS, MAX_FIG_COLS);
   copy_area(full_info->info.next, info.next, MAX_FIG_ROWS, MAX_FIG_COLS);
   info.high_score = full_info->info.high_score;
   info.score = full_info->info.score;
@@ -177,8 +177,14 @@ void copy_figure(int current_figure[MAX_FIG_ROWS][MAX_FIG_COLS],
  */
 void userInput(UserAction_t action, bool hold) {
   FULL_INFO;
-  full_info->current_action = action;
-  full_info->holding_ = hold;
+  static bool prev_hold = false;
+  static UserAction_t prev_action = 0;
+  if (!(action == Action && hold == false && prev_action == Action &&
+        prev_hold == true)) {
+    full_info->current_action = action;
+  }
+  prev_hold = hold;
+  prev_action = action;
 }
 
 /**
@@ -261,7 +267,7 @@ void moving_actions(full_game_info_t* full_info, UserAction_t action) {
       fall_down();
       break;
     case Action:
-      if (full_info->holding_) rotate();
+      rotate();
       break;
     case Pause:
       full_info->state = PAUSE_STATE;
@@ -863,16 +869,14 @@ void set_level(void) {
  */
 void read_high_score(void) {
   FULL_INFO;
-  int high_score = -1;
-  FILE* f = fopen("../../tetris_high_score.txt", "r");
+  int high_score = 0;
+  FILE* f = fopen("tetris_high_score.txt", "r");
   if (f) {
-    if (fscanf(f, "%d", &high_score) != 1) {
+    if (fscanf(f, "%d", &high_score) == 1) {
       full_info->info.high_score = high_score;
-      fclose(f);
     }
-  } else {
-    full_info->info.high_score = 0;
-  };
+    fclose(f);
+  }
 }
 
 /**
@@ -880,7 +884,7 @@ void read_high_score(void) {
  */
 void update_high_score(void) {
   FULL_INFO;
-  FILE* f = fopen("../../tetris_high_score.txt", "w");
+  FILE* f = fopen("tetris_high_score.txt", "w+");
   if (f) {
     fprintf(f, "%d", full_info->info.high_score);
     fclose(f);

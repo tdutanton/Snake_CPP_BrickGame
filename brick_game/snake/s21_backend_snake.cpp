@@ -248,7 +248,7 @@ void s21::SnakeGame::clean_field() {
  */
 void s21::SnakeGame::read_high_score() {
   int high_score = -1;
-  FILE* f = fopen("../../snake_high_score.txt", "r");
+  FILE* f = fopen("snake_high_score.txt", "r");
   if (f) {
     if (fscanf(f, "%d", &high_score) != EOF) {
       info.high_score = high_score;
@@ -268,7 +268,7 @@ void s21::SnakeGame::read_high_score() {
  * If file is not found, do nothing
  */
 void s21::SnakeGame::update_high_score() {
-  FILE* f = fopen("../../snake_high_score.txt", "w");
+  FILE* f = fopen("snake_high_score.txt", "w");
   if (f) {
     fprintf(f, "%d", info.high_score);
     fclose(f);

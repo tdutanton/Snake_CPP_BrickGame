@@ -20,7 +20,7 @@ void main_game_cycle(void) {
   UserAction_t push;
   while ((push = user_push(getch())) != Terminate) {
     print_current_game_state(updateCurrentState());
-    userInput(push, push == Action ? true : false);
+    userInput(push, false);
   }
 }
 

@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = s21_brickgame_desktop1.0.0
-DISTDIR = /home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop/.tmp/s21_brickgame_desktop1.0.0
+DISTDIR = /home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop/.tmp/s21_brickgame_desktop1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath-link,/usr/lib/x86_64-linux-gnu
 LIBS          = $(SUBLIBS) ../../s21_snake.a /usr/lib/x86_64-linux-gnu/libQt6Widgets.so /usr/lib/x86_64-linux-gnu/libQt6Gui.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libQt6Core.so -lpthread -lGLX -lOpenGL   
@@ -717,21 +717,21 @@ moc_mainwindow.cpp: mainwindow.h \
 		s21_next_field_window.h \
 		moc_predefs.h \
 		/usr/lib/qt6/libexec/moc
-	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 moc_s21_field_window.cpp: s21_field_window.h \
 		../../brick_game/tetris/s21_backend_tetris.h \
 		../../brick_game/snake/s21_backend_snake.h \
 		moc_predefs.h \
 		/usr/lib/qt6/libexec/moc
-	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include s21_field_window.h -o moc_s21_field_window.cpp
+	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include s21_field_window.h -o moc_s21_field_window.cpp
 
 moc_s21_next_field_window.cpp: s21_next_field_window.h \
 		../../brick_game/tetris/s21_backend_tetris.h \
 		../../brick_game/snake/s21_backend_snake.h \
 		moc_predefs.h \
 		/usr/lib/qt6/libexec/moc
-	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/montoyay_home/s21_gitlab/CPP3_BrickGame_v2.0-1/src/gui/desktop -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include s21_next_field_window.h -o moc_s21_next_field_window.cpp
+	/usr/lib/qt6/libexec/moc $(DEFINES) --include /home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -I/home/montoyay_home/private_github/Snake_CPP_BrickGame/gui/desktop -I/usr/include/x86_64-linux-gnu/qt6 -I/usr/include/x86_64-linux-gnu/qt6/QtWidgets -I/usr/include/x86_64-linux-gnu/qt6/QtGui -I/usr/include/x86_64-linux-gnu/qt6/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include s21_next_field_window.h -o moc_s21_next_field_window.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:

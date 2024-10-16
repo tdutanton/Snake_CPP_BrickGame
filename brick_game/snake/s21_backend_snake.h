@@ -72,6 +72,22 @@ class SnakeGame {
   APPLE apple_;
   std::deque<std::pair<int, int>> snake_body_;
   DIRECTION direction_;
+  bool is_bad_move(int x, int y, int d_y);
+  void check_eat(int x, int y);
+  void set_speed();
+  void pause_process();
+  void get_direction();
+  void spawn_apple();
+  void start_actions();
+  void prepare_start_field();
+  void set_level();
+  void place_snake_on_field();
+  void copy_only_apple();
+  void snake_step();
+  long long update_time();
+  void update_high_score();
+  void read_high_score();
+  void clean_field();
 
  public:
   SnakeGame();
@@ -79,27 +95,11 @@ class SnakeGame {
 
   GameInfo_t info;
   int current_action;
+  long long timer_;
   bool holding_;
   game_state state;
-  long long timer_;
   static SnakeGame* update_full_info();
-  void clean_field();
   void fsm();
-  void read_high_score();
-  void update_high_score();
-  long long update_time();
-  void snake_step();
-  void copy_only_apple();
-  void place_snake_on_field();
-  void set_level();
-  void prepare_start_field();
-  void start_actions();
-  void spawn_apple();
-  void get_direction();
-  void pause_process();
-  void set_speed();
-  void check_eat(int x, int y);
-  bool is_bad_move(int x, int y, int d_y);
 };
 
 }  // namespace s21
